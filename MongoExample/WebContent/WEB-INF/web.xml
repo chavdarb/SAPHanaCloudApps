@@ -19,4 +19,34 @@
     <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/UploadServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserUpsertServlet</display-name>
+    <servlet-name>UserUpsertServlet</servlet-name>
+    <servlet-class>userbase.UserUpsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserUpsertServlet</servlet-name>
+    <url-pattern>/UserUpsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserPhoto</display-name>
+    <servlet-name>UserPhoto</servlet-name>
+    <servlet-class>userbase.UserPhoto</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserPhoto</servlet-name>
+    <url-pattern>/UserPhoto</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RemoveUser</display-name>
+    <servlet-name>RemoveUser</servlet-name>
+    <servlet-class>userbase.RemoveUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveUser</servlet-name>
+    <url-pattern>/RemoveUser</url-pattern>
+  </servlet-mapping>
 </web-app>

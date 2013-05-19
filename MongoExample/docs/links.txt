@@ -5,7 +5,10 @@ http://javakart.blogspot.com/2012/11/file-upload-example-using-servlet.html
 http://www.apl.jhu.edu/~hall/java/Servlet-Tutorial/Servlet-Tutorial-Cookies.html
 
 http://www.javascriptkit.com/javatutors/dom2.shtml
+http://www.quirksmode.org/dom/inputfile.html
 
 http://stackoverflow.com/questions/1863399/mongodb-is-it-possible-to-make-a-case-insensitive-query
 http://stackoverflow.com/questions/5499451/case-insensitive-query-on-mongodb
 http://www.w3schools.com/tags/tag_button.asp
+http://alvinalexander.com/blog/post/servlets/forwarding-from-servlet-jsp
+http://www.javapractices.com/topic/TopicAction.do?Id=181
