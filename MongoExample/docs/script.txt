@@ -1,0 +1,90 @@
+# start mongo db http://localhost:28017/
+mongod --dbpath C:\develop\mongodb\data
+
+#start client
+mongo
+
+# show databases
+show dbs;
+
+# drop database
+use example;
+db.dropDatabase();
+
+# show collections
+db.getCollectionNames();
+
+# create collection
+db.createCollection("users");
+
+# get collection
+ db.getCollection("users");
+ db.users.find();
+ 
+# drop collection 
+ db.users.drop();
+ db.getCollection("users").drop();
+ 
+# insert document (record)
+db.users.insert({ firstName: "Chavdar", lastName: "Baikov", email:"chavdarb@yahoo.com"});
+db.users.insert({ firstName: "Petio", lastName: "Petev", email: "petio.petev@sap.com"});
+
+# find all query
+db.users.find();
+
+# find Chavdar
+db.users.find({ firstName:"Chavdar"});
+
+# find Petio by mail
+db.users.find({ email:"petio.petev@sap.com"});
+
+# add Alex! shows different structure
+db.users.insert({ firstName: "Alexander", lastName: "Baikov", age: 1});
+
+#find Alex!
+db.users.find({ firstName: "Alexander", lastName: "Baikov"});
+
+#unset years it should be age 
+db.users.update({ firstName: "Alexander", lastName: "Baikov"}, {$unset : {years:1}});
+
+#set age
+db.users.update({ firstName: "Alexander"}, {$set : {age:1}});
+
+#set nested structure (location)
+db.users.update( {email:"chavdarb@yahoo.com"}, {$set: {location : { country: "Bulgaria", city: "Sofia"}}});
+> db.users.find( {email:"chavdarb@yahoo.com"});
+{ "_id" : ObjectId("519a0b8264a54e9246a8e4ca"), "email" : "chavdarb@yahoo.com", "firstName" : "Chavd
+ar", "lastName" : "Baikov", "location" : { "country" : "Bulgaria", "city" : "Sofia" } }
+
+#try to query embedded tag (will not work!)
+db.users.find( {location: {country:"Bulgaria"}});
+
+#this will work but is impractical!
+db.users.find( {location: {country:"Bulgaria", city:"Sofia"}});
+
+#this is better now !
+db.users.find({'location.country':"Bulgaria"})
+
+#you can even query multiple nested attributes
+db.users.find({'location.country':"Bulgaria",'location.city':"Sofia"});
+
+# let's mix things up! Adding tags as array
+db.users.update({ email: "chavdarb@yahoo.com"}, {$set: {tags: ["one","two"]}});
+db.users.update({ email: "petio.petev@sap.com"}, {$set: {tags: ["one"]}});
+
+# Let's see which users have the same tag!
+db.users.find({tags:"one"});
+
+# Removing little Alex from the database.
+db.users.remove({age:{"$lt":2}});
+
+
+
+
+
+
+
+
+
+
+

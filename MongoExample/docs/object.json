@@ -1,0 +1,7 @@
+{ "_id" : ObjectId("519a0b8264a54e9246a8e4ca"), 
+  "email" : "chavdarb@yahoo.com", 
+  "firstName" : "Chavdar", 
+  "lastName" : "Baikov", 
+  "location" : { "country" : "Bulgaria", 
+                 "city" : "Sofia" }, 
+  "tags" : [ "one", "two" ] }
