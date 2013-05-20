@@ -7,9 +7,8 @@ mongo
 # show databases
 show dbs;
 
-# drop database
+# select database
 use example;
-db.dropDatabase();
 
 # show collections
 db.getCollectionNames();
@@ -21,10 +20,7 @@ db.createCollection("users");
  db.getCollection("users");
  db.users.find();
  
-# drop collection 
- db.users.drop();
- db.getCollection("users").drop();
- 
+
 # insert document (record)
 db.users.insert({ firstName: "Chavdar", lastName: "Baikov", email:"chavdarb@yahoo.com"});
 db.users.insert({ firstName: "Petio", lastName: "Petev", email: "petio.petev@sap.com"});
@@ -78,13 +74,10 @@ db.users.find({tags:"one"});
 # Removing little Alex from the database.
 db.users.remove({age:{"$lt":2}});
 
+# drop collection 
+ db.users.drop();
+ db.getCollection("users").drop();
 
 
-
-
-
-
-
-
-
-
+# drop database
+db.dropDatabase();
